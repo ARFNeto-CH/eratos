@@ -170,7 +170,7 @@ int main(int argc, char** argv)
 	if (argc > 1)	n = strtoul(argv[1], 0, 0);
 	else
 		n = 900;
-	unsigned int	i = 0;
+	unsigned int	i = 0; 
 	unsigned int	lim = limita_memoria(n);
 
 	printf("\n\nTestando com n=%u\n", lim);
