@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="crivo.c">
+    <ClCompile Include="ch-191104-primo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="primos-lib.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -23,5 +26,8 @@
     <ClInclude Include="primos-lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="saida.txt" />
   </ItemGroup>
 </Project>

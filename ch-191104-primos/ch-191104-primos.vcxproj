@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{91BB480E-9B01-4CD7-B50C-CFB8EE59F364}</ProjectGuid>
+    <ProjectGuid>{3F9F410D-0A46-4F49-AE92-B59AEE30571B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>eratos</RootNamespace>
+    <RootNamespace>ch191104primos</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,12 +72,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\toninho\source\repos\eratos\coisas-primos;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\toninho\source\repos\eratos\coisas-primos;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -151,10 +153,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="crivo.c" />
+    <ClCompile Include="ch-191104-primo.c" />
+    <ClCompile Include="primos-lib.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primos-lib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="saida.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
