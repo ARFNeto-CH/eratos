@@ -20,15 +20,14 @@ int main()
 	p2 = proximo_primo(1);
 	p3 = proximo_primo(1);
 	p4 = proximo_primo(1);
-	int seq = 1;
+	int seq = 0;
 	long N = 0;
 	N = (p1*p1) + (p2*p2) + (p3*p3) + (p4*p4);
 
 	while (N < 10000000)
-	{
+	{	seq += 1;
 		printf("%8ld    ", N);
 		if (seq % 8 == 0) printf("\n");
-		seq += 1;
 		p1 = p2;
 		p2 = p3;
 		p3 = p4;
