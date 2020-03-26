@@ -6,7 +6,7 @@ int main(int argc, char** argv)
 	unsigned int n;
 	if (argc > 1)	n = strtoul(argv[1], 0, 0);
 	else
-		n = 900;
+		n = 200;
 	unsigned int	i = 0; 
 	unsigned int	lim = limita_memoria(n);
 
@@ -19,12 +19,22 @@ int main(int argc, char** argv)
 
 	i = mostra_os_primos(lim);
 	printf("\n\nEncontrados %u primos\n", i);
+
+	// agora testa a funcao unica e compara com os valores obtidos do crivo de eratostenes
+	i = compara_primos_com_crivo_unica(lim);
+	if (i == 1)
+		printf("Testando (nova) primos contra os marcados no crivo: sem surpresas. Todos os valores coincidem\n");
+	else
+		printf("Testando (nova) primos contra os marcados no crivo: Algo errado!\n");
+
+
 	// agora testa a funcao e compara com os valores obtidos do crivo de eratostenes
 	i = compara_primos_com_crivo(lim);
 	if (i == 1)
 		printf("Testando primos contra os marcados no crivo: sem surpresas. Todos os valores coincidem\n");
 	else
 		printf("Testando primos contra os marcados no crivo: Algo errado!\n");
+
 	// agora testa o crivo e com a funcao verifica se todos sao primos
 	i = testa_crivo_contra_funcao(lim);
 	if (i == 1)	printf("Testando os valores do crivo com a funcao: sem surpresas. todos os valores confirmados\n");

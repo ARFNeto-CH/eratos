@@ -16,6 +16,25 @@ int				compara_primos_com_crivo(unsigned int n)
 	return 1;	// tudo ok: valores indenticos
 }	// end compara_primos_com_crivo()
 
+int				compara_primos_com_crivo_unica(unsigned int n)
+{
+	proximo_primo_crivo(n);	// prepara crivo
+	for (unsigned int i = 11; i <= n; i++)
+	{
+		int r = retorna_um_se_primo(i);
+		if (r == 1)
+		{	// primo. então deve ser o proximo d lista
+			int s = proximo_primo_unica(i);
+			if (i != s)
+			{
+				printf("Falhou para %d: nova funcao retornou %d\n", i, s);
+				return 0;
+			}
+		}	// end if
+	}	// end for
+	return 1;	// tudo ok: valores indenticos
+}	// end compara_primos_com_crivo_unica()
+
 unsigned int	limita_memoria(unsigned int n)
 {
 	unsigned limite = (LIMITE_A_ALOCAR_KB * 512) + 1;
@@ -138,6 +157,50 @@ unsigned int	proximo_primo_crivo(unsigned int n)
 	proximo = 0;
 	return k;
 }	// end proximo_primo_crivo()
+
+unsigned int	proximo_primo_unica(unsigned int next)
+{
+	//
+	// atencao: retorna os primos a partir de 11
+	//
+	int FALSE = 0;
+	int TRUE = 1;
+	static int p4 = 7;
+	// p4 e o ultimo primo
+	// nas proximas linhas vamos definir next como
+	// sendo... o proximo primo depois de p4
+	int achou_proximo = FALSE;
+	next = 0;
+	for (int i = p4 + 2; !achou_proximo; i = i + 2)
+	{
+		//int smaior = (int)sqrt((double)i); era isso
+		int  maior = 0;
+		for (maior = 7; (maior * maior) < i; maior += 1);
+		// passou 1 da conta se nao for um quadrado perfeito
+		if (maior * maior != i) maior = maior - 1;
+		int  fator = 3;
+		while (fator <= maior)
+		{
+			if (i % fator == 0)
+			{	// entao 'i' nao e primo
+				// forca sair do loop
+				fator = 100000000L; // tanto faz
+			}
+			else
+			{
+				fator = fator + 2;
+			}
+		}	// end while
+		if (fator != (100000000L))
+		{
+			next = i;
+			achou_proximo = TRUE;
+		};	// if()
+	};	// for()
+	// saindo daqui temos o primo depois de p4 em next
+	p4 = next;
+	return next;
+};	// proximo_primo_unica()
 
 int				retorna_um_se_primo(unsigned int n)
 {

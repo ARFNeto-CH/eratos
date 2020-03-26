@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="crivo.c">
+    <ClCompile Include="primos_lib.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="primos_lib.c">
+    <ClCompile Include="crivo.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

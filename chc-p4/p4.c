@@ -4,26 +4,50 @@
 #include "math.h"
 #include "stdio.h"
 
-unsigned long   	proximo_primo(unsigned int);
+unsigned int   	proximo_primo(unsigned int);
 int					retorna_um_se_primo(unsigned int);
 
 int main()
 {
 	// lista os numeros N da forma N = A*A + B*B + C*C + D*D 
 	// onde A B C e D sao primos  consecutivos
-
-	unsigned long p1, p2, p3, p4; // os 4 primeiros
-	unsigned long proximo = 0;
+	unsigned int p1, p2, p3, p4; // os 4 primeiros
+	unsigned int N;
+	proximo_primo(0);
+	p1 = proximo_primo(1);
+	p2 = proximo_primo(1);
+	p3 = proximo_primo(1);
+	p4 = proximo_primo(1);
+	int seq = 1;
+	//if (seq == 0) return 0;
+	while (1)
+	{	
+		N = (p1*p1) + (p2*p2) + (p3*p3) + (p4*p4);
+		if (N > 10000000L) break;
+		printf(
+			"%3d: %10d = %ld + %ld + %ld + %ld\
+\t[%d,%d,%d,%d]\n",
+			seq, N, (p1*p1), (p2*p2), (p3*p3), (p4*p4),
+			p1, p2, p3, p4 );
+		seq += 1;
+		p1 = p2;
+		p2 = p3;
+		p3 = p4;
+		p4 = proximo_primo(1);
+	};	// while()
+	// tinha passado: soma antes
+	printf("\n\nListados %d valores\n\n", seq-1);
 
 	proximo_primo(0);
 	p1 = proximo_primo(1);
 	p2 = proximo_primo(1);
 	p3 = proximo_primo(1);
 	p4 = proximo_primo(1);
-	int seq = 0;
-	long N = 0;
+	printf("Iniciando com [%d,%d,%d,%d]\n",
+		p1, p2, p3, p4);
+	seq = 0;
+	N = 0;
 	N = (p1*p1) + (p2*p2) + (p3*p3) + (p4*p4);
-
 	while (N < 10000000)
 	{	seq += 1;
 		printf("%8ld    ", N);
@@ -32,18 +56,18 @@ int main()
 		p2 = p3;
 		p3 = p4;
 		p4 = proximo_primo(1);
-		N = (p1 * p1 + p2 + p2 + p3 * p3 + p4 * p4);
+		N = (p1*p1 + p2*p2 + p3*p3 + p4*p4);
 	};	// while()
 	printf("\n\nListados %d valores\n\n", seq);
 };	// main()
 
-int				retorna_um_se_primo(unsigned long n)
+int				retorna_um_se_primo(unsigned int n)
 {
 	if (n < 2)		return 0;
 	if (n == 2)		return(1);
 	if (n % 2 == 0) return(0);
-	unsigned long maior = (unsigned int)sqrt((double)n);
-	unsigned long fator = 3;
+	unsigned int maior = (unsigned int)sqrt((double)n);
+	unsigned int fator = 3;
 	while (fator <= maior)
 	{
 		if (n % fator == 0) return 0;
@@ -52,10 +76,10 @@ int				retorna_um_se_primo(unsigned long n)
 	return 1;
 }	// end retorna_zero_se_primo()
 
-unsigned long	proximo_primo(unsigned long n)
+unsigned int	proximo_primo(unsigned int n)
 {
-	static long	 iniciado = 0;
-	static long	 proximo = 0;
+	static int	 iniciado = 0;
+	static int	 proximo = 0;
 
 	if (n == 0)						// inicia a serie
 	{
@@ -73,7 +97,7 @@ unsigned long	proximo_primo(unsigned long n)
 	}	// end if
 
 	// normal: a a partir daqui retorna o proximo primo
-	for (long i = proximo + 2;; i += 2)
+	for (int i = proximo + 2;; i += 2)
 		if (retorna_um_se_primo(i))
 		{
 			proximo = i;
