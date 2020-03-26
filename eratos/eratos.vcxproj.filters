@@ -18,10 +18,18 @@
     <ClCompile Include="crivo.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="primos_lib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primos-lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="eratos-saida.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -1,0 +1,25 @@
+
+
+   10;     5;     6 |     2
+    5;     5;     3 |     3
+    5;     5;     1 |     5
+    1;     1;     1 |
+--------------------|-------
+                    | mmc(10;5;6) = 1x2x3x5 = 30
+MMC=30
+
+Entre com 3 valores para ver o MMC: 10 30 17
+Calculando para 10,30 e 17...
+
+
+   10;    30;    17 |     2
+    5;    15;    17 |     3
+    5;     5;    17 |     5
+    1;     1;    17 |    17
+    1;     1;     1 |
+--------------------|-------
+                    | mmc(10;30;17) = 1x2x3x5x17 = 510
+MMC=510
+C:\Users\toninho\source\repos\eratos\x64\Debug\chc-mmc.exe (process 11104) exited with code 0.
+Press any key to close this window . . .
+

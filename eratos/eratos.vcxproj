@@ -152,9 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="crivo.c" />
+    <ClCompile Include="primos_lib.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primos-lib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="eratos-saida.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
