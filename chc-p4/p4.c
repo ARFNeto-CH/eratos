@@ -5,7 +5,7 @@
 #include "stdio.h"
 
 unsigned int   	proximo_primo(unsigned int);
-int					retorna_um_se_primo(unsigned int);
+int				retorna_um_se_primo(unsigned int);
 
 int main()
 {
@@ -14,16 +14,16 @@ int main()
 	unsigned int p1, p2, p3, p4; // os 4 primeiros
 	unsigned int N;
 	proximo_primo(0);
-	p1 = proximo_primo(1);
-	p2 = proximo_primo(1);
-	p3 = proximo_primo(1);
-	p4 = proximo_primo(1);
+	p1 = proximo_primo(1); // 2
+	p2 = proximo_primo(1); // 3
+	p3 = proximo_primo(1); // 5
+	p4 = proximo_primo(1); // 7
 	int seq = 1;
 	//if (seq == 0) return 0;
 	while (1)
 	{	
 		N = (p1*p1) + (p2*p2) + (p3*p3) + (p4*p4);
-		if (N > 10000000L) break;
+		if (N > 10000000) break;
 		printf(
 			"%3d: %10d = %ld + %ld + %ld + %ld\
 \t[%d,%d,%d,%d]\n",
